@@ -28,15 +28,7 @@ class Login {
       processData: false,
       contentType: false,
       data: form_data,
-      type: 'POST'
-   }).done(function (data,data2) {
-    if (data == "OK") {
-          window.location.href = 'main.html';
-        }else {
-          alert(error);
-        }
-   })
-   /*
+      type: 'POST', 
       success: function(php_response){
         if (php_response.msg == "OK") {
           window.location.href = 'main.html';
@@ -47,6 +39,6 @@ class Login {
       error: function(){
         alert("error en la comunicación con el servidor");
       }
-    })*/
+    })
   }
 }

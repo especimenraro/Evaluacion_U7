@@ -3,7 +3,8 @@ include "conector.php";
 
 //$username = $_POST('username');
 //$clave = $_POST('password');
-echo "OK";
+$response['msg']="OK";
+echo json_encode($response);
 
 
 
