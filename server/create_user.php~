@@ -1,0 +1,21 @@
+<?php
+
+include "conector.php";
+$agenda= new ConectorBD("localhost","agenda_php","agenda_php");
+if($agenda->initConexion("agenda")=="OK") {
+	
+$datos["user"]="'especimenraro.cl@gmail.com'";
+$datos["nombre"]="'Ricardo Navia Ibaceta'";
+$datos["fecha_nac"]="'1972-06-29'";
+$datos["pass"]="'12345'";
+
+if($agenda->insertData("usuarios",$datos)) {} else {echo "error";} //FIN IF
+
+}//FIN IF
+else { echo "error en la conexion";}
+
+
+
+
+
+ ?>
