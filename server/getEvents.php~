@@ -1,0 +1,24 @@
+<?php
+  
+$agenda = new mysqli("localhost","agenda_php","agenda_php","agenda");
+
+if($agenda->errno) {
+	$response['msg']="Error de conexion con la BD:"." ".$agenda->error;
+	$agenda->close(); 	
+	}//FIN IF
+else {
+	$sql = "SELECT * FROM eventos WHERE 1";	
+	$eventos = 	$agenda->query($sql);		
+	if ($eventos->num_rows > 0) {
+		$response['msg']="OK";
+      $row = $eventos->fetch_assoc();
+      $response['eventos']= $row;
+	} // FIN IF 
+	else {
+    $response['msg']="OK"; 
+		} // FIN ELSE
+}// FIN ELSE
+$agenda->close();
+ echo json_encode($response);   
+
+ ?>

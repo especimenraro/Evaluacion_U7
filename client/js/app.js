@@ -198,7 +198,7 @@ class EventsManager {
 
 
 $(function(){
-	$(".calendario").fullCalendar({});
+	
   initForm();
   var e = new EventsManager();
   $('form').submit(function(event){

@@ -1,7 +1,7 @@
 <?php
 
-$username ="usuario1@gmail.com";//$_POST['username'];
-$clave = "12345";//$_POST['password'];
+$username =$_POST['username'];
+$clave = $_POST['password'];
 
 
 $agenda = new mysqli("localhost","agenda_php","agenda_php","agenda");
