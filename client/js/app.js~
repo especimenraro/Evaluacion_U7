@@ -32,22 +32,25 @@ class EventsManager {
     }
 
     poblarCalendario(eventos) {
+    	var fecha = new Date()
+    	var mes = fecha.getMonth() +1
+    	var fecha_actual = fecha.getFullYear()+"-"+mes+"-01"
         $('.calendario').fullCalendar({
             header: {
-        		left: 'prev,next today',
-        		center: 'title',
+        		center: 'prev,next today',
+        		left: 'title',
         		right: 'month,agendaWeek,basicDay'
         	},
-        	defaultDate: '2016-11-01',
+        //	defaultDate: fecha_actual,
         	navLinks: true,
         	editable: true,
         	eventLimit: true,
           droppable: true,
           dragRevertDuration: 0,
           timeFormat: 'H:mm',
-          eventDrop: (event) => {
+          eventDrop:(event) => {
               this.actualizarEvento(event)
-          },
+      		  },
           events: eventos,
           eventDragStart: (event,jsEvent) => {
             $('.delete-btn').find('img').attr('src', "img/trash-open.png");
@@ -198,7 +201,7 @@ class EventsManager {
 
 
 $(function(){
-	$(".calendario").fullCalendar({});
+	
   initForm();
   var e = new EventsManager();
   $('form').submit(function(event){

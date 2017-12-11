@@ -14,8 +14,8 @@ if($agenda->errno) {
 } // FIN ELSE 
 
 $agenda->close();
- echo json_encode($response);    
+// echo json_encode($response);    
 
-
+echo $sql;
 
  ?>

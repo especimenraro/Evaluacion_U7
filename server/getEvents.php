@@ -16,6 +16,7 @@ else {
       	
       	$start = $row['fecha_inicio']."T".$row['hora_inicio'];
       	$end = $row['fecha_fin']."T".$row['hora_fin'];
+      	$eventos[$indice]['id']= $row['id'];
       	$eventos[$indice]['title']=$row['titulo'];
       	$eventos[$indice]['start']=$start;
       	$eventos[$indice]['end']=$end;
