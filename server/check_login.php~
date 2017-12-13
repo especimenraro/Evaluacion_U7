@@ -35,7 +35,7 @@ else {
 	
 
 }// FIN ELSE
-
+$agenda->close();
  echo json_encode($response);    
 
 

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $username =$_POST['username'];
 $clave = $_POST['password'];
 
@@ -19,7 +19,7 @@ if($agenda->errno) {
       	$response['msg']="OK";
       if($row['pass']==$clave) {
         	$response['msg']="OK";
-        	
+        	$_SESSION['usuario']=$username;
         } else {
 		   $response['msg']="Clave Incorrecta"; 
 		   

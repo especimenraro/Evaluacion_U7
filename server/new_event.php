@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+  $username = $_SESSION['usuario'];
 $titulo = $_POST['titulo'];
 $fecha_inicio = $_POST['start_date'];
 $hora_inicio = $_POST['start_hour'];
@@ -21,7 +22,7 @@ if($agenda->errno) {
 	$agenda->close(); 	
 	}//FIN IF
 else {
-	$sql = "INSERT INTO eventos (titulo,fecha_inicio,hora_inicio,fecha_fin,hora_fin,dia_entero) VALUES ('".$titulo."','".$fecha_inicio."','".$hora_inicio."','".$fecha_fin."','".$hora_fin."','".$dia_entero."')";	
+	$sql = "INSERT INTO eventos (titulo,fecha_inicio,hora_inicio,fecha_fin,hora_fin,dia_entero,user) VALUES ('".$titulo."','".$fecha_inicio."','".$hora_inicio."','".$fecha_fin."','".$hora_fin."','".$dia_entero."','".$username."')";	
 	$status =	$agenda->query($sql);		
 	$response['msg']="OK";
 	} // FIN ELSE

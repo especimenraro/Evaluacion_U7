@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+  $username = $_SESSION['usuario'];
+  
 $id =$_POST['id'];
 $agenda = new mysqli("localhost","agenda_php","agenda_php","agenda");
 
@@ -8,7 +12,7 @@ if($agenda->errno) {
 	}//FIN IF
 	
 	else {
-	$sql = "DELETE FROM eventos WHERE id=".$id;	
+	$sql = "DELETE FROM eventos WHERE id='".$id."' AND user = '".$username."'";	
 	$agenda->query($sql);		
 	$response['msg']="OK";
 } // FIN ELSE 
