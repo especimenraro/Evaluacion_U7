@@ -21,6 +21,6 @@ if($agenda->errno) {
 }
 $agenda->close();
 $response['msg']="OK";
-echo json_encode($response);
+echo $response;
 
  ?>

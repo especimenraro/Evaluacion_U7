@@ -36,11 +36,11 @@ class EventsManager {
     	var mes = fecha.getMonth() +1
     	var fecha_actual = fecha.getFullYear()+"-"+mes+"-01"
         $('.calendario').fullCalendar({
-            header: {
-        		center: 'prev,next today',
-        		left: 'title',
-        		right: 'month,agendaWeek,basicDay'
-        	},
+            header: { left: 'today prev,next',
+						center: 'title',
+						right: 'month agendaWeek agendaDay'
+
+				}/*,
         //	defaultDate: fecha_actual,
         	navLinks: true,
         	editable: true,
@@ -69,7 +69,7 @@ class EventsManager {
                   $('.calendario').fullCalendar('removeEvents', event.id);
             }
 
-          }
+          }*/
         })
     }
 
