@@ -22,7 +22,7 @@ if($agenda->errno) {
 	$agenda->close(); 	
 	}//FIN IF
 else {
-	$sql = "INSERT INTO eventos (titulo,fecha_inicio,hora_inicio,fecha_fin,hora_fin,dia_entero,usuario) VALUES ('".$titulo."','".$fecha_inicio."','".$hora_inicio."','".$fecha_fin."','".$hora_fin."','".$dia_entero."','".$username."')";	
+	$sql = "INSERT INTO eventos (titulo,fecha_inicio,hora_inicio,fecha_fin,hora_fin,dia_entero,user) VALUES ('".$titulo."','".$fecha_inicio."','".$hora_inicio."','".$fecha_fin."','".$hora_fin."','".$dia_entero."','".$username."')";	
 	$status =	$agenda->query($sql);		
 	$response['msg']="OK";
 	} // FIN ELSE

@@ -1,5 +1,25 @@
 $(function(){
-  var l = new Login();
+	 $.ajax({
+          url: '../server/create_user.php',
+			dataType: "json",
+        cache: false,
+        processData: false,
+        contentType: false,          
+          data: {},
+          type: 'GET',
+          success: (data) =>{
+            if (data.msg=="OK") {
+              var l = new Login();
+            }else {
+              alert(data.msg)
+            }
+          },
+          error: function(){
+            alert("error en la comunicación con el servidor");
+          }
+        })
+  
+  
 })
 
 

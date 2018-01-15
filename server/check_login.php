@@ -17,7 +17,8 @@ if($agenda->errno) {
 	if ($usuarios->num_rows > 0) {
       while($row = $usuarios->fetch_assoc()) {
       	$response['msg']="OK";
-      if($row['pass']==$clave) {
+      	
+      if(password_verify($clave,$row['pass'])) {
         	$response['msg']="OK";
         	$_SESSION['usuario']=$username;
         } else {

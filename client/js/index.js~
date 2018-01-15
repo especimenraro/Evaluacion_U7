@@ -1,5 +1,21 @@
 $(function(){
-  var l = new Login();
+	 $.ajax({
+          url: '../server/create_user.php',
+          data: {},
+          type: 'GET',
+          success: (data) =>{
+            if (data.msg=="OK") {
+              var l = new Login();
+            }else {
+              alert(data.msg)
+            }
+          },
+          error: function(){
+            alert("error en la comunicación con el servidor");
+          }
+        })
+  
+  
 })
 
 
@@ -22,7 +38,7 @@ class Login {
     form_data.append('username', username)
     form_data.append('password', password)
     $.ajax({
-      url: "./server/check_login.php",
+      url: "../server/check_login.php",
       dataType: "json",
       cache: false,
       processData: false,

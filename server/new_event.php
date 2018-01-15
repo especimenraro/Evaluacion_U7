@@ -7,14 +7,7 @@ $hora_inicio = $_POST['start_hour'];
 $fecha_fin = $_POST['end_date'];
 $hora_fin = $_POST['end_hour'];
 $dia_entero = $_POST['allDay'];
-/*
-$titulo = "hola";
-$fecha_inicio = "2017-12-10";
-$hora_inicio = "12:00";
-$fecha_fin = "2017-12-10";
-$hora_fin = "14:00";
-$dia_entero = "false";
-*/
+
   $agenda = new mysqli("localhost","agenda_php","agenda_php","agenda");
 
 if($agenda->errno) {
